@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\ProdiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('template.index');
-});
+Route::get('/', [BerandaController::class, 'index']);
+
+
+
+Route::get('/prodi-index', [ProdiController::class, 'index']);
+Route::get('/prodi-createIndex', [ProdiController::class, 'createIndex']);
+Route::post('/prodi-create', [ProdiController::class, 'create']);
+Route::get('/prodi-delete/{id}', [ProdiController::class, 'delete']);

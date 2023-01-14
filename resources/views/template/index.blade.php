@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
@@ -21,88 +21,119 @@
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <nav class="main-header navbar navbar-expand  navbar-light" style=" background-color:#52A67E;">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                    <a class="nav-link text-white" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
 
             </ul>
+            <div class="ml-5"></div>
+            <div class="ml-5"></div>
+            <div class="ml-5"></div>
+            <div class="col-6 ml-5">
+                <marquee direction="left" scrollamount="4" class="text-white" align="center">Selamat Datang di Sistem Pengelolaan Data Mahasiswa</marquee>
+            </div>
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
+                <!-- Navbar Search -->
+                <li class="nav-item">
+                    <a class="nav-link text-white" data-widget="navbar-search" href="#" role="button">
+                        <i class="fas fa-arrow-right mr-1"></i> Masuk
+                    </a>
+                    <div class="navbar-search-block">
+                        <form class="form-inline">
+                            <div class="input-group input-group-sm">
+                                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-navbar" type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                    <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
 
+                <!-- Messages Dropdown Menu -->
+
+                <!-- Notifications Dropdown Menu -->
 
             </ul>
         </nav>
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <aside class="main-sidebar sidebar-white-success elevation-2">
             <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
-                <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">AdminLTE 3</span>
-            </a>
+            <div class="  pb-3  d-flex " style="height: 200px;
+            width: auto;
+                          background-color:#52A67E;
+                         background-size: cover;">
+                <div class="info d-flex align-items-center ">
+                    <div class="row ">
+                        <div class="col-11 text-center">
+                            <img class="" src="{{asset('dist/img/unimal.png')}}" width="100px" height="100px" alt="">
 
-            <!-- Sidebar -->
-            <div class="sidebar">
-                <!-- Sidebar user (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-                    </div>
-                    <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
-                    </div>
-                </div>
-
-                <!-- SidebarSearch Form -->
-                <div class="form-inline">
-                    <div class="input-group" data-widget="sidebar-search">
-                        <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-                        <div class="input-group-append">
-                            <button class="btn btn-sidebar">
-                                <i class="fas fa-search fa-fw"></i>
-                            </button>
                         </div>
+                        <div class="col-11 text-center text-white text-bold">
+                            Sistem Pengelolaan Data Mahasiswa
+                        </div>
+                        <div class="col-11 text-center text-white text-bold">
+
+                        </div>
+
                     </div>
+
                 </div>
+
+            </div>
+
+            <div class="sidebar">
+
+
+
 
                 <!-- Sidebar Menu -->
-                <nav class="mt-2">
+                <nav class="mt-1">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
 
-                        <li class="nav-item">
-                            <a href="../widgets.html" class="nav-link">
+
+                        <li class="nav-item ">
+                            <a href=" /" class="nav-link {{(request()->is('/')?'bg-secondary':'')}}">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
-                                    Widgets
+                                    BERANDA
 
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="../widgets.html" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
+                        <li class="nav-item active">
+                            <a href="/prodi-index" class="nav-link {{(request()->is('prodi-index')?'bg-secondary':'')}}">
+                                <i class="nav-icon fas fa-building"></i>
                                 <p>
-                                    Widgets
+                                    Prodi
 
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="../widgets.html" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
+                        <li class="nav-item ">
+                            <a href="/tentangIndex" class="nav-link ">
+                                <i class="nav-icon fas fa-search"></i>
                                 <p>
-                                    Widgets
+                                    Pencarian
 
                                 </p>
                             </a>
                         </li>
+
+
+
 
                     </ul>
                 </nav>
@@ -116,35 +147,28 @@
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1>DataTables</h1>
-                        </div>
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">DataTables</li>
-                            </ol>
-                        </div>
-                    </div>
+
                 </div><!-- /.container-fluid -->
             </section>
 
             <!-- Main content -->
             <section class="content">
-                <div class="container-fluid">
+                <div class="container-fluid ">
                     @yield('content')
-                </div>
-                <!-- /.container-fluid -->
+
+
+
+                </div><!-- /.container-fluid -->
             </section>
             <!-- /.content -->
+
+            <a id="back-to-top" href="#" class="btn btn-primary back-to-top" role="button" aria-label="Scroll to top">
+                <i class="fas fa-chevron-up"></i>
+            </a>
         </div>
         <!-- /.content-wrapper -->
+
         <footer class="main-footer">
-            <div class="float-right d-none d-sm-block">
-                <b>Version</b> 3.2.0
-            </div>
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
         </footer>
 
         <!-- Control Sidebar -->
@@ -169,8 +193,10 @@
     <script src="{{asset('plugins/jszip/jszip.min.js')}}"></script>
     <script src="{{asset('plugins/pdfmake/pdfmake.min.js')}}"></script>
     <script src="{{asset('plugins/pdfmake/vfs_fonts.js')}}"></script>
+    <script src="{{asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
     <script src="{{asset('plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
     <script src="{{asset('plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="{{asset('plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
     <!-- AdminLTE App -->
     <script src="{{asset('dist/js/adminlte.min.js')}}"></script>
@@ -188,7 +214,7 @@
             $('#example2').DataTable({
                 "paging": true,
                 "lengthChange": false,
-                "searching": false,
+                "searching": true,
                 "ordering": true,
                 "info": true,
                 "autoWidth": false,
