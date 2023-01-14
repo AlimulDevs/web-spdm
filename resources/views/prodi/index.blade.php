@@ -50,7 +50,7 @@
                             <td class="col-3">{{strtoupper($dp->kepala_prodi)}}</td>
                             <td class="col-3"><img width="50px" height="50px" src=" {{$dp->logo}}" alt=""></td>
                             <td>
-                                <a href="" class="btn btn-sm btn-warning mb-1"><i class="fas fa-edit text-white"></i></a>
+                                <a href="/prodi-editIndex/{{$dp->id}}" class="btn btn-sm btn-warning mb-1"><i class="fas fa-edit text-white"></i></a>
                                 <a href="/prodi-delete/{{$dp->id}}" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>

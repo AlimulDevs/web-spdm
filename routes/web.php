@@ -21,5 +21,6 @@ Route::get('/', [BerandaController::class, 'index']);
 
 Route::get('/prodi-index', [ProdiController::class, 'index']);
 Route::get('/prodi-createIndex', [ProdiController::class, 'createIndex']);
+Route::get('/prodi-editIndex/{id}', [ProdiController::class, 'editIndex']);
 Route::post('/prodi-create', [ProdiController::class, 'create']);
 Route::get('/prodi-delete/{id}', [ProdiController::class, 'delete']);

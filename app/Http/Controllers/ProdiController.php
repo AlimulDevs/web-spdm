@@ -27,8 +27,8 @@ class ProdiController extends BaseController
 
     public function editIndex($id)
     {
-        $data_prodi = DB::table('tb_prodi')->get();
-        return view('prodi.create', compact("data_prodi"));
+        $data_prodi = DB::table('tb_prodi')->where("id", $id)->get();
+        return view('prodi.edit', compact("data_prodi"));
     }
 
 
