@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{asset('assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('assets/dist/css/adminlte.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/plugins/select2/css/select2.min.css')}}">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -144,7 +145,7 @@
                             </a>
                         </li>
                         <li class="nav-item ">
-                            <a href="/tentangIndex" class="nav-link ">
+                            <a href="/pencarian-index" class="nav-link {{(request()->is('pencarian-index')?'bg-secondary':'')}}  {{(request()->is('pencarian-1')?'bg-secondary':'')}}  {{(request()->is('pencarian-2')?'bg-secondary':'')}}">
                                 <i class="nav-icon fas fa-search"></i>
                                 <p>
                                     Pencarian
@@ -223,6 +224,7 @@
     <script src="{{asset('assets/dist/js/adminlte.min.js')}}"></script>
     <!-- AdminLTE for demo purposes -->
 
+    <script src="{{asset('assets/plugins/select2/js/select2.full.min.js')}}"></script>
     <!-- Page specific script -->
     <script>
         $(function() {

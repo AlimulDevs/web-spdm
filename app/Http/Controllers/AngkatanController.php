@@ -11,7 +11,7 @@ class AngkatanController extends Controller
 
     public function index()
     {
-        $data_angkatan = DB::table("tb_angkatan")->get();
+        $data_angkatan = DB::table("tb_angkatan")->orderBy('tahun', 'asc')->get();
 
         return view('angkatan.index', compact("data_angkatan"));
     }

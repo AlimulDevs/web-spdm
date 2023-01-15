@@ -63,4 +63,69 @@ class MahasiswaController extends Controller
 
         return view('mahasiswa.detail', compact("data_mahasiswa"));
     }
+
+    public function delete($id)
+    {
+        $getMahasiswa = DB::table("tb_mahasiswa")->where("id", $id)->first();
+
+        DB::table("tb_profil_mahasiswa")->where("mahasiswa_id", $id)->delete();
+        DB::table("tb_mahasiswa")->where("id", $id)->delete();
+
+        return redirect("/mahasiswa-index");
+    }
+
+
+
+    public function create(Request $request)
+    {
+
+        $validate_mahasiswa = DB::table("tb_mahasiswa")->where("nim", $request->nim)->first();
+
+        if ($validate_mahasiswa != null) {
+            return redirect("/angkatan-viewIndex/$request->prodi_id/$request->angkatan_id")->with("failed_add", "Gagal Menambahkan Data, NIM sudah ada");
+        }
+
+        DB::table("tb_mahasiswa")->insert([
+            "nim" => $request->nim,
+            "prodi_id" => $request->prodi_id,
+            "angkatan_id" => $request->angkatan_id,
+            "kelas_id" => $request->kelas_id,
+
+        ]);
+        $get_mahasiswa = DB::table('tb_mahasiswa')->get()->last();
+        DB::table("tb_profil_mahasiswa")->insert([
+            "mahasiswa_id" => $get_mahasiswa->id,
+            "name" => $request->name,
+            "jenis_kelamin" => $request->jenis_kelamin,
+            "agama" => $request->agama,
+            "alamat" => $request->alamat,
+
+
+        ]);
+
+        return redirect("/mahasiswa-index")->with("success_add", "Berhasil Menambahkan Data");
+    }
+    public function edit(Request $request)
+    {
+
+
+
+        DB::table("tb_mahasiswa")->where("id", $request->id)->update([
+
+            "kelas_id" => $request->kelas_id,
+
+        ]);
+
+        DB::table("tb_profil_mahasiswa")->where("mahasiswa_id", $request->id)->update([
+
+            "name" => $request->name,
+            "jenis_kelamin" => $request->jenis_kelamin,
+            "agama" => $request->agama,
+            "alamat" => $request->alamat,
+
+
+        ]);
+
+        return redirect("/mahasiswa-index")->with("success_edit", "Berhasil Mengubah Data");
+    }
 }
