@@ -36,15 +36,15 @@
             <div class="ml-5"></div>
             <div class="ml-5"></div>
             <div class="col-6 ml-5">
-                <marquee direction="left" scrollamount="4" class="text-white" align="center">Selamat Datang di Sistem Pengelolaan Data Mahasiswa</marquee>
+                <marquee direction="left" scrollamount="4" class="text-white" align="center">Selamat Datang {{session()->get('name')}} di Sistem Pengelolaan Data Mahasiswa</marquee>
             </div>
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <!-- Navbar Search -->
                 <li class="nav-item">
-                    <a class="nav-link text-white" data-widget="navbar-search" href="#" role="button">
-                        <i class="fas fa-arrow-right mr-1"></i> Masuk
+                    <a class="nav-link text-white" href="/logout">
+                        <i class="fas fa-arrow-right mr-1"></i> Keluar
                     </a>
                     <div class="navbar-search-block">
                         <form class="form-inline">
@@ -81,7 +81,7 @@
                 <div class="info d-flex align-items-center ">
                     <div class="row ">
                         <div class="col-11 text-center">
-                            <img class="" src="{{asset('assets/dist/img/unimal.png')}}" width="100px" height="100px" alt="">
+                            <img class="" src="https://upload.wikimedia.org/wikipedia/commons/6/60/Logo-Unimal-Aceh_Utara.png" width="120px" height="120px" alt="">
 
                         </div>
                         <div class="col-11 text-center text-white text-bold">
@@ -121,6 +121,24 @@
                                 <i class="nav-icon fas fa-building"></i>
                                 <p>
                                     Prodi
+
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="/angkatan-index" class="nav-link {{(request()->is('angkatan-index')?'bg-secondary':'')}}">
+                                <i class="nav-icon fas fa-columns"></i>
+                                <p>
+                                    Angkatan
+
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="/mahasiswa-index" class="nav-link {{(request()->is('mahasiswa-index')?'bg-secondary':'')}}">
+                                <i class="nav-icon fas fa-users"></i>
+                                <p>
+                                    Mahasiswa
 
                                 </p>
                             </a>

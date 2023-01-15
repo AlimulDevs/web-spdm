@@ -15,11 +15,12 @@
             </div>
         </div>
         <div class="card-body">
-            <form action="/prodi-create" method="post" enctype="multipart/form-data">
+            <form action="/prodi-edit" method="post" enctype="multipart/form-data">
                 @foreach ($data_prodi as $dp)
 
-                @endforeach
+
                 @csrf
+                <input type="hidden" value="{{$dp->id}}" name="id">
                 <div class="row mt-3">
                     <div class="col-2">
                         <label for="" class="form-label">Name Prodi</label>
@@ -30,18 +31,22 @@
                     <div class="col-2">
                         <label for="" class="form-label">Kepala Prodi</label>
                     </div>
-                    <div class="col-8"><input name="kepala_prodi" class="form-control" type="text" required></div>
+                    <div class="col-8"><input value="{{$dp->kepala_prodi}}" name="kepala_prodi" class="form-control" type="text" required></div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-2">
                         <label for="" class="form-label">Logo Prodi</label>
                     </div>
-                    <div class="col-8"><input name="logo" class="form-control" type="file" required></div>
+                    <div class="col-2">
+                        <img src="{{$dp->logo}}" width="100px" alt="">
+                    </div>
+                    <div class="col-6"><input name="logo" class="form-control" type="file"></div>
                 </div>
                 <div class="mt-3 ml-auto ">
-                    <input type="submit" class="btn btn-success" value="Tambah Data">
+                    <input type="submit" class="btn btn-warning text-white" value="Edit Data">
                 </div>
             </form>
+            @endforeach
         </div>
     </div>
 

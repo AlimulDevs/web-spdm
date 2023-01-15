@@ -15,8 +15,9 @@ class CreateTbAngkatanTable extends Migration
     {
         Schema::create('tb_angkatan', function (Blueprint $table) {
             $table->id();
-            $table->integer("tahun");
-            $table->integer("jumlah_kelas");
+            $table->integer("tahun")->nullable();
+            $table->integer("jumlah_kelas")->nullable();
+            $table->bigInteger("angkatan")->index();
             $table->timestamps();
         });
     }

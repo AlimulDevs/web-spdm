@@ -12,6 +12,9 @@ class BerandaController extends BaseController
 {
     public function index()
     {
+        if (session()->get("remember_token") == "") {
+            return redirect("/loginIndex")->with("failed", "anda");
+        }
         $data_jurusan = DB::table('tb_prodi')->get();
         return view('beranda.index', compact("data_jurusan"));
     }

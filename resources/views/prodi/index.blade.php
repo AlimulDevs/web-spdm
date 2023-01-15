@@ -9,10 +9,15 @@
     @if ($messege = Session::get('success_delete'))
     <div class="alert alert-danger alert-dismissible " role="alert">
         <strong>{{$messege}}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <button type="button" class="btn-close " data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @elseif ($messege= Session::get('success_create'))
     <div class="alert alert-success alert-dismissible " role="alert">
+        <strong>{{$messege}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @elseif ($messege= Session::get('success_edit'))
+    <div class="alert alert-warning alert-dismissible " role="alert">
         <strong>{{$messege}}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>

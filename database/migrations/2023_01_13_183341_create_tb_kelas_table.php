@@ -15,7 +15,7 @@ class CreateTbKelasTable extends Migration
     {
         Schema::create('tb_kelas', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
+            $table->string("name")->nullable();
             $table->timestamps();
         });
     }

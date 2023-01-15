@@ -15,9 +15,9 @@ class CreateTbProdiTable extends Migration
     {
         Schema::create('tb_prodi', function (Blueprint $table) {
             $table->id();
-            $table->string("name")->unique();
-            $table->string("logo");
-            $table->string("kepala_prodi");
+            $table->string("name")->unique()->nullable();
+            $table->string("logo")->nullable();
+            $table->string("kepala_prodi")->nullable();
             $table->timestamps();
         });
     }

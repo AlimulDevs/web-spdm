@@ -14,11 +14,11 @@ class CreateTbProfilMahasiswaTable extends Migration
     public function up()
     {
         Schema::create('tb_profil_mahasiswa', function (Blueprint $table) {
-            $table->id();
-            $table->string("name");
-            $table->string("jenis_kelamin");
-            $table->string("agama");
-            $table->string("alamat");
+            $table->id()->unsigned(false);
+            $table->string("name")->nullable();
+            $table->string("jenis_kelamin")->nullable();
+            $table->string("agama")->nullable();
+            $table->string("alamat")->nullable();
             $table->timestamps();
         });
     }
