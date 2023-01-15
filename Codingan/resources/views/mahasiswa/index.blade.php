@@ -26,6 +26,11 @@
         <strong>{{$messege}}
             <button type="button" class="btn-close text-white" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
+    @elseif ($messege= Session::get('success_delete'))
+    <div class="alert alert-danger alert-dismissible text-white" role="alert">
+        <strong>{{$messege}}
+            <button type="button" class="btn-close text-white" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
     @endif
 
     <div class="card">

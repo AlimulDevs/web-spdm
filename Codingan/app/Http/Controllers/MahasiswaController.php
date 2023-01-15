@@ -66,12 +66,12 @@ class MahasiswaController extends Controller
 
     public function delete($id)
     {
-        $getMahasiswa = DB::table("tb_mahasiswa")->where("id", $id)->first();
+
 
         DB::table("tb_profil_mahasiswa")->where("mahasiswa_id", $id)->delete();
         DB::table("tb_mahasiswa")->where("id", $id)->delete();
 
-        return redirect("/mahasiswa-index");
+        return redirect("/mahasiswa-index")->with("success_delete", "Berhasil Menghapus Data");
     }
 
 

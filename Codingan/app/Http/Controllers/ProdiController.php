@@ -100,7 +100,7 @@ class ProdiController extends BaseController
                 "kepala_prodi" => strtoupper($request->kepala_prodi),
 
             ]);
-            return redirect('/prodi-index')->with("success_edit", "Berhasil Menambahkan Data");
+            return redirect('/prodi-index')->with("success_edit", "Berhasil Mengubah Data");
         }
 
         File::delete($delfil);

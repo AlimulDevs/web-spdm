@@ -18,8 +18,9 @@
     </div>
     @elseif ($messege= Session::get('success_edit'))
     <div class="alert alert-warning alert-dismissible " role="alert">
-        <strong>{{$messege}}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+        <strong class="text-white">{{$messege}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
 
